@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    /**
+     * Méthode qui affichera tous les posts de l'app
+     */
     public function index()
     {
-
+        $posts = Post::all();
+        dd($posts);
         return view("posts", [
-            "post" =>  Post::where("id", 252)->with("user")->first()
+            "posts" => $posts
         ]);
     }
 }

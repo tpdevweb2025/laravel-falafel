@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function home()
     {
         $user = User::select()
-            ->where(["id" => 1, "email" => "test@example.com"])
+            ->where(["id" => 1])
             ->first();
         return view("welcome", [
             "user" => $user,
