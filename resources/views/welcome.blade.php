@@ -20,9 +20,13 @@
                 </nav>
             </div>
             <div>
-                <div>
-                    <img src="#" alt="" />
-                    <p>search</p>
+                <div class="container_search">
+                    <span><img src="#" alt="" /></span>
+                    <input
+                        type="text"
+                        placeholder="Rechercher"
+                        class="search-input"
+                    />
                 </div>
                 <img src="#" alt="ma photo de profil" />
             </div>
