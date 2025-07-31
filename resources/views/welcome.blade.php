@@ -73,40 +73,27 @@
                 <div class="post_container">
                     <h3>Pour vous</h3>
                     <div class="wrapper-comments">
-                        <img src="#" alt="image de profil" />
-                        <div class="container_post">
-                            <div>
-                                <p>Prenom</p>
-                                <p>Nom</p>
-                                <p>.. H</p>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Eius vero enim eligendi veniam
-                                delectus, nihil nobis molestias alias ipsam
-                                dolore inventore explicabo consequatur, repellat
-                                soluta exercitationem dolores quod voluptatum
-                                eaque?
-                            </p>
-                            <img
-                                src="#"
-                                alt="ici c'est l'image trop cool de mon post"
-                            />
-                            <div class="picto_post_container">
+                        @foreach ($posts as $post)
+                            <div class="container_post" style="border: 1px solid lightgray; padding: 1rem">
                                 <div>
-                                    <img src="#" alt="#" />
-                                    <p>25</p>
+                                    <p>{{ $post->user->pseudo }}</p>
                                 </div>
-                                <div>
-                                    <img src="#" alt="#" />
-                                    <p>25</p>
-                                </div>
-                                <div>
-                                    <img src="#" alt="#" />
-                                    <p>25</p>
+                                <p>
+                                    {{ $post->content }}
+                                </p>
+                                <div class="picto_post_container">
+                                    <div>
+                                        <p>Likes : <strong>{{ count($post->likes) }}</strong></p>
+                                    </div>
+                                    <div>
+                                        <p>Comments : <a href="{{ route("comments", $posts[0]->comments[0]->id) }}">{{ $posts[0]->comments[0]->id }}</a></p>
+                                    </div>
+                                    <div>
+                                        <p>Partages : {{ count($post->shares) }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
