@@ -22,7 +22,6 @@
 }
 
 header {
-    background-color: rebeccapurple;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,13 +45,12 @@ main {
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-    background-color: green;
+
     display: flex;
     gap: 2rem;
 }
 
 .explorer {
-    background-color: #fff;
     margin-left: 1rem;
     width: 30%;
     min-height: 500px;
@@ -126,4 +124,11 @@ main {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
+}
+
+.container_search {
+    display: flex;
+    gap: 1rem;
+    background-color: lightcoral;
+    border-radius: 3px;
 }
